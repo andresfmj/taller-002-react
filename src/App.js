@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 import './App.css';
 
+import Navigation from './components/Navigation/Navigation';
+import Cursos from './containers/Courses/Courses';
+import Usuarios from './containers/Users/Users';
+
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App">
+                    <Navigation navs={[
+                        {id: 1, url: '/courses', label: 'Cursos'},
+                        {id: 2, url: '/users', label: 'Usuarios'}
+                    ]} />
+                    <Switch>
+                        <Route path='/courses' component={Cursos} />
+                        <Route path='/users' component={Usuarios} />
+                        <Redirect from='/all-courses' to='/courses' />
+                        <Route render={() => <h3>404 Pagina no encontrada</h3>} />
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;
