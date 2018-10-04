@@ -1,0 +1,16 @@
+.Course {
+    border: 1px solid slategray;
+    margin: 4px;
+    padding: 8px;
+    box-shadow: 0 0 2px slategray;
+    cursor: pointer;
+}
+
+.Course h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.Course p {
+    margin: 0;
+}

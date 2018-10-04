@@ -1,0 +1,26 @@
+.Navigation {
+    margin: 0;
+    padding: 0;
+}
+
+.Navigation ul {
+    list-style: none;
+    margin: 8px 0px;
+    padding: 0px;
+}
+
+.Navigation ul li {
+    display: inline-block;
+    margin: 0px 4px;
+}
+
+.Navigation ul li a {
+    text-decoration: none;
+    color: #514136;
+}
+
+.Navigation ul li a:hover,
+.Navigation ul li a.active {
+    text-decoration: underline;
+    color: #b04a01;
+}
